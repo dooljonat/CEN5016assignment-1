@@ -14,10 +14,6 @@ export default (req: Request<{ num: string }>, res: Response) => {
       return res.status(400).send("Invalid input")
     }
 
-    if (parsedNum < 0) {
-      return res.status(400).send("Input needs to be a non-negative integer")
-    }
-
     const fibN : number = fibonacci(parsedNum);
     const result = `fibonacci(${num}) is ${fibN}`;
 
